@@ -354,14 +354,12 @@ uint8_t Adafruit_FONA::getIMEI(char *imei) {
  *
  * @return uint8_t The nework status:
  *
- *  * 0: Not registered, MT is not currently searching a new operator to
- * register to
- *  * 1: Registered, home network
- *  * 2: Not registered, but MT is currently searching a newoperator to register
- * to
- *  * 3: Registration denied
- *  * 4: Unknown
- *  * 5: Registered, roaming
+ *  * 0: Não registrado, MT não está atualmente procurando um novo operador para se registrar.
+ *  * 1: Registrado, rede doméstica.
+ *  * 2: Não registrado, mas MT está atualmente procurando um novo operador para se registrar.
+ *  * 3: Registro negado.
+ *  * 4: Desconhecido.
+ *  * 5: Registrado, em roaming.
  */
 uint8_t Adafruit_FONA::getNetworkStatus(void) {
   uint16_t status;
