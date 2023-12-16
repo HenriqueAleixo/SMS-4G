@@ -101,7 +101,34 @@ void taskSms(void *parameter)
         {
           Serial.println("Conectado.");
           delay(100);
-          fona.sendSMS(callerIDbuffer, "Conectado.");
+          if (digitalRead(RELAY_PIN) == HIGH)
+          {
+            // concactena a string para enviar na mensagem
+            String msg = "Conectado. Sistema Desligado.";
+            char msgChar[100];
+            msg.toCharArray(msgChar, 100);
+            fona.sendSMS(callerIDbuffer, msgChar);
+          }
+          else if (digitalRead(RELAY_PIN) == LOW)
+          {
+            // concactena a string para enviar na mensagem
+            String msg = "Conectado. Sistema Ligado.";
+            char msgChar[100];
+            msg.toCharArray(msgChar, 100);
+            fona.sendSMS(callerIDbuffer, msgChar);
+          }
+        }
+        else if (smsString == "Saturno,on") // Change "On" to something secret like "Off&%4235"
+        {
+          digitalWrite(RELAY_PIN, LOW);
+          delay(100);
+          fona.sendSMS(callerIDbuffer, "Sistema Ligado");
+        }
+        else if (smsString == "Saturno,off") // Change "On" to something secret like "Off&%4235"
+        {
+          digitalWrite(RELAY_PIN, HIGH);
+          delay(100);
+          fona.sendSMS(callerIDbuffer, "Sistema Desligado");
         }
 
         if (fona.deleteSMS(slot))
@@ -144,7 +171,8 @@ void setup()
   if (!fona.begin(*fonaSerial))
   {
     Serial.println(F("Couldn't find FONA"));
-    while (1);
+    while (1)
+      ;
   }
   Serial.println(F("FONA is OK"));
 
