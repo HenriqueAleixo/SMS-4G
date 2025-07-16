@@ -1,4 +1,7 @@
 {
     "idf.portWin": "COM4",
-    "cmake.sourceDirectory": "C:/Users/aleix/Documents/PlatformIO/Projects/SMS-4G/.pio/libdeps/esp-wrover-kit/Unity"
+    "cmake.sourceDirectory": "C:/Users/aleix/Documents/PlatformIO/Projects/SMS-4G/.pio/libdeps/esp-wrover-kit/Unity",
+    "files.associations": {
+        "*.tpp": "cpp"
+    }
 }
