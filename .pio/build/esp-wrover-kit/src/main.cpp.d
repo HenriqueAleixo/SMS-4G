@@ -132,4 +132,9 @@
  C:/Users/lucas/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include/esp_spi_flash_counters.h \
  C:/Users/lucas/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32/spiram.h \
  C:/Users/lucas/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
- C:/Users/lucas/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h
+ C:/Users/lucas/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
+ src/TaskConnect.h src/TaskSms.h src/TaskLed.h src/DebugSerial.h \
+ src/../lib/ATCommands/ATCommands.h src/../lib/SaturnoCore/SaturnoCore.h \
+ src/../lib/SaturnoModem/SaturnoModem.h \
+ src/../lib/SaturnoModem/../ATCommands/ATCommands.h \
+ src/../lib/SaturnoModem/../SaturnoCore/SaturnoCore.h
